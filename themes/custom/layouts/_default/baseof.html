@@ -1,7 +1,51 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 <head>
-{{- partial "head.html" . -}}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>
+		{{ if eq .Title .Site.Title }}
+			{{ .Site.Title }}
+		{{ else }}
+			{{ printf "%s · %s" .Title .Site.Title }}
+		{{ end }}
+	</title>
+	
+	<link rel="preload" href="/fonts/Copernicus-Book.woff2" as="font" type="font/woff2" crossorigin>
+	
+	<meta name="description" content="{{ if .Params.SEO.description }}{{ .Params.SEO.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}" />
+	<meta name="url" content="{{ .Permalink }}" />
+	
+	<meta property="og:title" content="{{ .Title }}" />
+	<meta property="og:description" content="{{ if .Params.SEO.description }}{{ .Params.SEO.description }}{{ else }}{{ .Site.Params.Description }}{{ end }}" />
+	<meta property="og:url" content="{{ .Permalink }}" />
+	
+	{{ if .Params.SEO.Thumbnail }}
+	
+		{{ $image := (.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" .Params.SEO.Thumbnail) }}
+	
+		<meta property="og:image" content="{{ ($image.Resize "1200x jpg").RelPermalink }}" />
+	
+	{{ end }}
+	
+	{{ if eq .Section "posts" }}
+	
+		<meta property="og:type" content="article" />
+		<meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02" }}" />
+		<meta property="og:article:author" content="{{ .Params.Author }}" />
+	
+	{{ else }}
+	
+		<meta property="og:type" content="website" />
+	
+	{{ end }}
+	
+	{{- block "head" . }}{{- end }}
+	
+	{{ $css := resources.Get "css/app.scss" }}
+	{{ $style := $css | resources.ToCSS | minify }}
+	<style>{{ $style.Content | safeCSS }}</style>
 </head>
 <body>
 {{- partial "header.html" . -}}
