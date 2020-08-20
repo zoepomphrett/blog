@@ -1,0 +1,48 @@
+{{ $regex := `!\[([^\]]*)\]\((.*?)\s*(\"(?:.*[^\"])\")?\s*\)` }}{{/*"*/}}
+
+<figure class="gallery">
+	{{ $images := slice }}
+	{{ $rows := slice }}
+
+	{{ range (findRE $regex .Inner) }}
+		{{ $alt := replaceRE $regex "${1}" . }}
+		{{ $src := replaceRE $regex "${2}" . }}
+
+		{{ $image := ($.Page.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" $src ) }}
+		{{ $ratio := div (mul $image.Height 1.0) $image.Width }}
+
+		{{ $images = $images | append (dict "alt" $alt "image" $image "ratio" $ratio) }}
+
+		{{ if eq (len $images) $.Site.Params.gallery.columns }}
+			{{ $rows = $rows | append (slice $images) }}
+			{{ $images = slice }}
+		{{ end }}
+	{{ end }}
+
+	{{ if gt (len $images) 0 }}
+		{{ $rows = $rows | append (slice $images) }}
+	{{ end }}
+
+	{{ range $rows }}
+		
+		{{ $sum := 0 }}
+		{{ range . }}{{ $sum = add $sum (div 1 .ratio) }}{{ end }}
+
+		<div class="gallery-row" style="margin-bottom: {{ $.Site.Params.gallery.gap }}%;">
+
+		{{ range . }}
+			{{ $width := mul 100 (div (sub 1 (mul (sub (len .) 2) (div $.Site.Params.gallery.gap 100.0))) (mul .ratio $sum)) }}
+			{{ $padding := mul $width .ratio }}
+
+			<div class="gallery-item image" style="width: {{ lang.NumFmt 5 $width }}%; padding-top: {{ lang.NumFmt 5 $padding }}%">
+
+				{{ partial "image" (dict "page" $.Page "image" .image "alt" .alt "class" "gallery-image image-content") }}
+
+			</div>
+		{{ end }}
+		</div>
+
+	{{ end }}
+	
+</figure>
+

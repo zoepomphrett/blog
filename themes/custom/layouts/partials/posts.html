@@ -1,0 +1,31 @@
+<main class="index">
+	<div class="index-posts">
+		{{ range .Paginator.Pages }}
+		{{ partial "summary.html" (dict "page" . "class" "index-post" "excerpt" true)}}
+		{{ end }}
+	</div>
+
+	{{ if ne .Paginator.TotalPages 0 }}
+	
+		<nav class="pagination">
+			{{ if .Paginator.HasPrev }}
+			<a href="{{ .Paginator.Prev.URL }}" class="pagination-link">
+				{{ partial "right-arrow.html" (dict "class" "pagination-arrow" "disabled" false) }}
+			</a>
+			{{ else }}
+			{{ partial "right-arrow.html" (dict "class" "pagination-arrow" "disabled" true) }}
+			{{ end }}
+			<div class="pagination-progress">
+				<span class="pagination-current">{{ .Paginator.PageNumber }}</span>/{{ .Paginator.TotalPages }}
+			</div>
+			{{ if .Paginator.HasNext }}
+			<a href="{{ .Paginator.Next.URL }}" class="pagination-link">
+				{{ partial "left-arrow.html" (dict "class" "pagination-arrow" "disabled" false) }}
+			</a>
+			{{ else }}
+			{{ partial "left-arrow.html" (dict "class" "pagination-arrow" "disabled" true) }}
+			{{ end }}
+		</nav>
+	
+	{{ end }}
+</main>

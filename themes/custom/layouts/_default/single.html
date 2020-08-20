@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+<main class="main">
+
+	<article class="post">
+
+		{{ if .Params.showtitle }}
+		<header class="post-header">
+			<h1 class="post-title">{{ .Title }}</h1>
+
+			{{ with .Date }}
+			<div class="post-meta">
+				<time class="post-date" datetime="{{ .Format "2006-01-02" }}">
+					{{ .Format "2 January 2006" }}
+				</time>
+			</div>
+			{{ end }}
+		</header>
+		{{ end }}
+
+		<section class="post-content">
+			{{ .Content }}
+		</section>
+
+		{{ if .Params.showpostnav }}
+		<nav class="post-nav">
+			{{ with .NextInSection }}
+			<div class="post-nav-item">
+				{{ partial "summary.html" (dict "page" . "class" "post-nav-teaser" "excerpt" false) }}
+				{{ partial "left-arrow.html" (dict "class" "post-nav-arrow" "disabled" false) }}
+			</div>
+			{{ end }}
+
+			{{ with .PrevInSection }}
+			<div class="post-nav-item">
+				{{ partial "summary.html" (dict "page" . "class" "post-nav-teaser" "excerpt" false) }}
+				{{ partial "right-arrow.html" (dict "class" "post-nav-arrow" "disabled" false) }}
+			</div>
+			{{ end }}
+		</nav>
+		{{ end }}
+
+	</article>
+
+</main>
+
+{{ end }}

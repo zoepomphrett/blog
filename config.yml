@@ -1,0 +1,37 @@
+title: Much Ado About Blogging
+baseURL: 'https://zoepomphrett-test.netlify.app'
+paginate: 10
+summaryLength: 70
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+  - category
+  - RSS
+languageCode: en
+
+theme: custom
+
+params:
+  description: Site description
+  error: Not all those who wander are lost. But you’re definitely lost.
+  imageSizes:
+    - 300
+    - 500
+    - 750
+    - 1000
+    - 1500
+    - 2500
+  gallery:
+    columns: 2
+    gap: 1.4
+    
+minify:
+  disableSVG: true

@@ -1,0 +1,15 @@
+{{ if .Title }}{{ .Page.Scratch.Add "count" 1 }}{{ end }}
+
+{{ $image := (.Page.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" .Destination ) }}
+
+{{ $ratio := div (mul $image.Height 100.0) $image.Width }}
+
+<figure class="image" style="padding-top: {{ lang.NumFmt 5 $ratio }}%">
+
+	{{ partial "image" (dict "page" $.Page "image" $image "alt" .Text "title" .Title "class" "image-content") }}
+
+	{{ with .Title }}
+		<figcaption class="image-caption">Nº{{ printf "%02d" ($.Page.Scratch.Get "count") }} {{ . }}</figcaption>
+	{{ end }}
+
+</figure>

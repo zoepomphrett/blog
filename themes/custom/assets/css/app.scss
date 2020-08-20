@@ -1,0 +1,442 @@
+/* -------------------
+	VARIABLES
+------------------- */
+
+$primary-color: #FF1C47;
+$secondary-color: #FF7B94;
+$selection-color: #ffd8df;
+$heading-color: #000;
+$body-color: #202020;
+$background-color: #faf4e9;
+$disabled-color: #d5cfc8;
+
+$color-transition: 0.2s ease;
+
+$vertical-space: 1.4em;
+
+/* -------------------
+	MIXINS
+------------------- */
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+/* -------------------
+	FONTS
+------------------- */
+
+@font-face {
+  font-family: "Copernicus Web";
+  src: url("/fonts/Copernicus-Book.woff2") format("woff2"), url("/fonts/Copernicus-Book.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Copernicus Web";
+  src: url("/fonts/Copernicus-BookItalic.woff2") format("woff2"), url("/fonts/Copernicus-BookItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Copernicus Web";
+  src: url("/fonts/Copernicus-Semibold.woff2") format("woff2"), url("/fonts/Copernicus-Semibold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Copernicus Web";
+  src: url("/fonts/Copernicus-SemiboldItalic.woff2") format("woff2"), url("/fonts/Copernicus-SemiboldItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Ogg Web";
+  src: url("/fonts/Ogg-Regular.woff2") format("woff2"), url("/fonts/Ogg-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pitch Sans Web";
+  src: url("/fonts/PitchSans-Regular.woff2") format("woff2"), url("/fonts/PitchSans-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+/* -------------------
+	SITE
+------------------- */
+
+body {
+	max-width: 38em;
+	margin: 0 auto;
+	padding: 0 1.9em;
+	background-color: $background-color;
+}
+
+/* -------------------
+	TYPOGRAPHY
+------------------- */
+
+@mixin copernicus {
+	font-family: "Copernicus Web", Palatino, Georgia, serif;
+}
+
+@mixin ogg {
+	font-family: "Ogg Web", Palatino, Georgia, serif;
+	font-weight: 400;
+}
+
+@mixin pitch-sans {
+	font-family: "Pitch Sans Web", "SFMono-Regular", Menlo, monospace;
+	font-size: 0.95rem;
+	letter-spacing: -0.01rem;
+}
+
+body {
+	@include copernicus;
+	font-size: 16px;
+	line-height: 1.75;
+	color: $body-color;
+}
+
+h1, h2, h3 {
+	@include ogg;
+	color: $heading-color;
+	margin: 0;
+}
+
+h1 {
+	font-size: 2.6rem;
+	line-height: 2.9rem;
+}
+
+h2 {
+	font-size: 2rem;
+	line-height: 2.6rem;
+}
+
+h2 + p {
+	margin-top: 0.4rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h3 + p {
+	margin-top: 0;
+}
+
+h4, h5, h6 {
+	font-size: 100%;
+	margin: $vertical-space 0;
+}
+
+p  {
+	margin: $vertical-space 0;
+}
+
+ul, ol {
+	margin: $vertical-space 0;
+	padding-right: 2rem;
+}
+
+li {
+	padding-left: 0.5rem;
+}
+
+blockquote {
+	margin: $vertical-space 0;
+	border-left: 1.5px solid $disabled-color;
+	padding-left: $vertical-space;
+	font-style: italic;
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;	
+}
+
+.post-content a {
+	border-bottom: 1px solid $body-color;
+}
+
+.post-content a:hover {
+	color: $primary-color;
+	border-bottom: 1px solid $primary-color;
+}
+
+
+::selection {
+	background-color: $selection-color
+}
+
+/* -------------------
+	HEADER
+------------------- */
+
+.header {
+	text-align: center;
+	margin: ($vertical-space * 2) 0 ($vertical-space * 3) 0;
+}
+
+.header-title {
+	@include ogg;
+	font-size: 3rem;
+	line-height: 1.3em;
+	margin-bottom: 0.4em;
+	color: $primary-color;
+}
+
+/* -------------------
+	NAV
+------------------- */
+
+.nav {
+	display: flex;
+	justify-content: center;
+
+	@include ogg;
+	font-size: 1.4em;
+	line-height: 1.2em;
+}
+
+.nav-item {
+	color: $body-color;
+}
+
+.nav-item:hover {
+	color: $secondary-color;
+}
+
+.nav-dot {
+	margin: 0 0.8rem;
+}
+
+.nav-item-current {
+	border-bottom: 1px solid $body-color;
+}
+
+.nav-item-current:hover {
+	border-bottom: 1px solid $secondary-color;
+}
+
+/* -------------------
+	ARROW
+------------------- */
+
+.arrow {
+	display: block;
+	width: 2.8rem;
+
+	fill: none;
+	stroke: $body-color;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 2;
+	flex-shrink: 0;
+}
+
+.arrow-disabled {
+	stroke: $disabled-color;
+}
+
+/* -------------------
+	TEASER
+------------------- */
+
+.teaser {
+	@include transition(color $color-transition);
+}
+
+.teaser-title {
+	margin-bottom: 0.1rem;
+	@include transition(color $color-transition);
+}
+
+.teaser-header {
+	margin-bottom: 0.8rem;
+	@include transition(color $color-transition);
+}
+
+.teaser:hover {
+	color: $secondary-color;
+}
+
+.teaser:hover .teaser-title {
+	color: $primary-color;
+}
+
+.teaser:hover .teaser-meta {
+	color: $secondary-color;
+}
+
+.teaser-excerpt p {
+	margin-bottom: 0;
+}
+
+.teaser-meta {
+	@include pitch-sans;
+	color: $body-color;
+	@include transition(color $color-transition);
+}
+
+/* -------------------
+	INDEX
+------------------- */
+
+.index-posts {
+	margin-bottom: ($vertical-space * 3);
+}
+
+.index-post {
+	margin-bottom: ($vertical-space * 2)
+}
+
+/* -------------------
+	PAGINATION
+------------------- */
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: ($vertical-space * 3);
+}
+
+.pagination-progress {
+	@include ogg;
+	font-size: 3.2rem;
+	letter-spacing: 0.1rem;
+	color: $secondary-color;
+	margin: 0 1rem;
+}
+
+.pagination-current {
+	color: $primary-color
+}
+
+.pagination-link {
+	display: block;
+	height: 100%;
+}
+
+.pagination-arrow:not(.arrow-disabled):hover {
+	stroke: $primary-color;
+}
+
+/* -------------------
+	POST
+------------------- */
+
+.post {
+	margin-bottom: ($vertical-space * 3)
+}
+
+.post-header {
+	margin-bottom: ($vertical-space * 2)
+}
+
+.post-title {
+	margin-bottom: 0.3rem;
+}
+
+.post-meta {
+	@include pitch-sans;
+	color: $body-color;
+}
+
+/* -------------------
+	IMAGE
+------------------- */
+
+.image {
+	position: relative;
+	margin: $vertical-space 0;
+}
+
+.image-content {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.image-caption {
+	@include pitch-sans;
+	color: $body-color	
+}
+
+/* -------------------
+	GALLERY
+------------------- */
+
+.gallery {
+	margin: $vertical-space 0;
+}
+
+.gallery-row {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.gallery-row:last-child {
+	margin-bottom: 0;
+}
+
+.gallery-item {
+	position: relative;
+	margin: 0;
+}
+
+/* -------------------
+	POST NAV
+------------------- */
+
+.post-nav {
+	margin-top: ($vertical-space * 6);
+}
+
+.post-nav-item {
+	position: relative;
+	margin-bottom: 1.8rem;
+}
+
+.post-nav-teaser {
+	margin-left: 4rem;
+}
+
+.post-nav-arrow {
+	position: absolute;
+	top: 0.7rem;
+	left: 0;
+	@include transition(stroke $color-transition);
+}
+
+.post-nav-teaser:hover + .post-nav-arrow {
+	stroke: $primary-color;
+}

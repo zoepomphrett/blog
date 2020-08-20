@@ -1,0 +1,7 @@
+{{ define "main" }}
+
+	{{ with .Site.GetPage "/posts/" }}
+		{{- partial "posts.html" . -}}
+	{{ end }}
+	
+{{ end }}

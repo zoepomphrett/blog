@@ -1,0 +1,6 @@
+name = "Custom"
+license = "MIT"
+description = "Custom Theme for Zoë"
+
+[author]
+  name = "Finlay A’Court"
