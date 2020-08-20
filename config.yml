@@ -1,7 +1,6 @@
 title: Much Ado About Blogging
 baseURL: 'https://muchadoaboutblogging.co.uk/'
-paginate: 10
-summaryLength: 70
+paginate: 5
 
 menu:
   main:

@@ -3,17 +3,15 @@
 		<header class="teaser-header">
 			<h2 class="teaser-title">{{ .page.Title }}</h2>
 			<div class="teaser-meta">
-				<time class="teaser-time" datetime="{{ .Page.Params.date.Format "2006-01-02" }}">
-					{{ .Page.Params.date.Format "2 January 2006" }}
+				<time class="teaser-time" datetime="{{ .page.Params.date.Format "2006-01-02" }}">
+					{{ .page.Params.date.Format "2 January 2006" }}
 				</time>
 			</div>
 		</header>
 		{{ if .excerpt }}
-		<div class="teaser-excerpt">
-			<p>
-				{{ replace .page.Summary "\n" "" | markdownify }}
-			</p>
-		</div>
+		<p class="teaser-excerpt">
+			{{ .page.Summary | plainify | htmlUnescape | replace "\n" "" | truncate 300 "..." }}
+		</p>
 		{{ end }}
 	</a>
 </article>
