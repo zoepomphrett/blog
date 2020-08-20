@@ -204,7 +204,7 @@ a {
 
 .header-title {
 	@include ogg;
-	font-size: 3rem;
+	font-size: 2.8rem;
 	line-height: 1.3em;
 	margin-bottom: 0.4em;
 	color: $primary-color;
@@ -293,8 +293,8 @@ a {
 	color: $secondary-color;
 }
 
-.teaser-excerpt p {
-	margin-bottom: 0;
+.teaser-excerpt {
+	margin: 0;
 }
 
 .teaser-meta {
