@@ -11,7 +11,7 @@
 		{{ if .excerpt }}
 		<div class="teaser-excerpt">
 			<p>
-				{{ .page.Summary }}
+				{{ replace .page.Summary "\n" "" | markdownify }}
 			</p>
 		</div>
 		{{ end }}
