@@ -40,9 +40,7 @@
 		<meta property="og:type" content="website" />
 	
 	{{ end }}
-	
-	{{- block "head" . }}{{- end }}
-	
+		
 	{{ $css := resources.Get "css/app.scss" }}
 	{{ $style := $css | resources.ToCSS | minify }}
 	<style>{{ $style.Content | safeCSS }}</style>

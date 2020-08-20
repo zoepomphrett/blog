@@ -1,7 +1,37 @@
 {{ define "main" }}
 
-	{{ with .Site.GetPage "/posts/" }}
-		{{- partial "posts.html" . -}}
-	{{ end }}
+{{ $paginator := .Paginate (where .Site.Pages "File.Dir" "posts/") }}
+
+<main class="index">
+	<div class="index-posts">
+		{{ range $paginator.Pages }}
+		{{ partial "summary.html" (dict "page" . "class" "index-post" "excerpt" true)}}
+		{{ end }}
+	</div>
+
+	{{ if ne $paginator.TotalPages 1 }}
 	
+		<nav class="pagination">
+			{{ if $paginator.HasPrev }}
+			<a href="{{ $paginator.Prev.URL }}" class="pagination-link">
+				{{ partial "right-arrow.html" (dict "class" "pagination-arrow" "disabled" false) }}
+			</a>
+			{{ else }}
+			{{ partial "right-arrow.html" (dict "class" "pagination-arrow" "disabled" true) }}
+			{{ end }}
+			<div class="pagination-progress">
+				<span class="pagination-current">{{ $paginator.PageNumber }}</span>/{{ $paginator.TotalPages }}
+			</div>
+			{{ if $paginator.HasNext }}
+			<a href="{{ $paginator.Next.URL }}" class="pagination-link">
+				{{ partial "left-arrow.html" (dict "class" "pagination-arrow" "disabled" false) }}
+			</a>
+			{{ else }}
+			{{ partial "left-arrow.html" (dict "class" "pagination-arrow" "disabled" true) }}
+			{{ end }}
+		</nav>
+	
+	{{ end }}
+</main>
+
 {{ end }}
