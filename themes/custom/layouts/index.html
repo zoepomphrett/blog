@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ $paginator := .Paginate (where .Site.Pages "File.Dir" "posts/") }}
+{{ $paginator := .Paginate (where .Site.RegularPages "File.Dir" "posts/") }}
 
 <main class="index">
 	<div class="index-posts">
