@@ -22,16 +22,31 @@
 			{{ .Content }}
 		</section>
 
+		{{ $i := 0 }}
+		{{ $index := 0 }}
+		{{ $pages := (where .Site.RegularPages "File.Dir" "posts/") }}
+
+		{{ range $pages }}
+
+			{{ if eq . $ }}
+				{{ $index = $i }}
+			{{ end }}
+			
+			{{ $i = add $i 1 }}
+
+		{{ end }}
+		
 		{{ if .Params.showpostnav }}
 		<nav class="post-nav">
-			{{ with .NextInSection }}
+
+			{{ with (index $pages (add $index 1)) }}
 			<div class="post-nav-item">
 				{{ partial "summary.html" (dict "page" . "class" "post-nav-teaser" "excerpt" false) }}
 				{{ partial "left-arrow.html" (dict "class" "post-nav-arrow" "disabled" false) }}
 			</div>
 			{{ end }}
 
-			{{ with .PrevInSection }}
+			{{ with (index $pages (sub $index 1)) }}
 			<div class="post-nav-item">
 				{{ partial "summary.html" (dict "page" . "class" "post-nav-teaser" "excerpt" false) }}
 				{{ partial "right-arrow.html" (dict "class" "post-nav-arrow" "disabled" false) }}
