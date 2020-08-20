@@ -10,11 +10,13 @@ description = ""
 thumbnail = ""
 
 +++
+![My kindle with a cup of tea](/uploads/img_8211.JPG)
+
 Until a friend explained to me a few weeks ago how Spotify paid their artists, I had never thought to question how Kindle Unlimited worked for authors.
 
-Of course, it's debated whether Kindle Unlimited is even worth the money for readers themselves - £7.99 a month for access to a collection that includes less than half of the ebooks available on Amazon is not an attractive prospect for the infrequent reader. However, as someone who always used to blow through their pocket money on just a few books, it seemed a thrilling proposition! 
+Of course, it's debated whether Kindle Unlimited is even worth the money for readers themselves - £7.99 a month for access to a collection that includes less than half of the ebooks available on Amazon is not an attractive prospect for the infrequent reader. However, as someone who always used to blow through their pocket money on just a few books, it seemed a thrilling proposition!
 
-But perhaps I was overhasty in my enthusiasm for the scheme. Initially 
+But perhaps I was overhasty in my enthusiasm for the scheme. Initially
 
 some view it as a steep price to pay for a collection that includes less than half of the books available on Kindle (and none of the big names) - but for me it had always seemed a no-brainer. With multiple books always on the go and usually reading a couple of books a week, it seemed destined to pay for itself!
 
