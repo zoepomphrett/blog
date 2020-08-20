@@ -35,3 +35,6 @@ params:
     
 minify:
   disableSVG: true
+
+permalinks:
+  posts: "/:year/:month/:filename/"
