@@ -1,11 +1,13 @@
 +++
 author = "Zoë Pomphrett"
 date = 2020-08-17T12:14:15Z
-description = ""
 draft = true
 showtitle = true
 showpostnav = true
 title = "Guilty Pleasures: Prequels, Sequels and New POVs "
+[seo]
+description = ""
+thumbnail = ""
 
 +++
 Suzanne Collins - The Ballad Of Songbirds And Snakes

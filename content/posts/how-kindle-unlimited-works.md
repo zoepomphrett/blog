@@ -1,7 +1,6 @@
 +++
 author = "Zoë Pomphrett"
 date = 2020-08-17T15:00:11Z
-description = ""
 draft = true
 showtitle = true
 showpostnav = true

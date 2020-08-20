@@ -1,5 +1,4 @@
 +++
-description = ""
 showpostnav = false
 showtitle = false
 title = "About Me"
