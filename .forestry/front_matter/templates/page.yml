@@ -1,0 +1,43 @@
+---
+label: Page
+hide_body: false
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Heading used in index and at the top of this post.
+- name: showtitle
+  type: boolean
+  label: Show Title
+  default: true
+  description: Show title at the top of the post
+- name: seo
+  type: field_group
+  config: {}
+  fields:
+  - name: description
+    type: textarea
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Meta Description
+    description: Used by search engines to identify page.
+  - name: thumbnail
+    type: file
+    config:
+      maxSize: 64
+    label: Thumbnail
+    description: Image that summarises page. Used when sharing links.
+  label: SEO
+  description: Search engine optimisation
+- name: showpostnav
+  type: boolean
+  label: Show Post Navigation
+  hidden: true
+  default: false
+pages:
+- content/about.md

@@ -1,0 +1,65 @@
+---
+label: Post
+hide_body: false
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Heading used in index and at the top of this post.
+- name: author
+  type: text
+  config:
+    required: true
+  label: Author
+  description: Currently only used by search engines.
+  default: Zoë Pomphrett
+- name: date
+  type: datetime
+  label: Date
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  description: Publish date of post
+  default: now
+- name: showtitle
+  type: boolean
+  label: Show Title
+  default: true
+  description: The exact address of a specific page. Uses title if left blank.
+- name: seo
+  type: field_group
+  config: {}
+  fields:
+  - name: description
+    type: textarea
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Meta Description
+    description: Used by search engines to identify page.
+  - name: thumbnail
+    type: file
+    config:
+      maxSize: 64
+    label: Thumbnail
+    description: Image that summarises page. Used when sharing links.
+  label: SEO
+  description: Search engine optimisation
+- name: showpostnav
+  type: boolean
+  label: Show Post Navigation
+  hidden: true
+  default: true
+pages:
+- content/posts/guilty-pleasures-susanne-collins-the-ballad-of-songbirds-and-snakes.md
+- content/posts/how-kindle-unlimited-works.md
+- content/posts/intertextuality-how-classic-novels-can-become-haunted-by-their-successors.md
+- content/posts/the-storyteller.md
+- content/posts/tooth-and-claw.md
+- content/posts/why-everyone-should-read-valeria-luiselli-s-lost-children-archive.md
