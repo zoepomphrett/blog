@@ -2,26 +2,29 @@
 author = "Zoë Pomphrett"
 date = 2020-08-17T15:00:11Z
 draft = true
-showtitle = true
 showpostnav = true
+showtitle = true
 title = "Should I End My Kindle Unlimited Subscription?"
 [seo]
 description = ""
 thumbnail = ""
 
 +++
+Until a friend explained to me a few weeks ago how Spotify paid their artists, I had never thought to question how Kindle Unlimited worked for authors.
 
-Until a friend explained to me a few weeks ago how Spotify paid their artists, I had never thought to question how Kindle Unlimited worked for authors. 
+Of course, it's debated whether Kindle Unlimited is even worth the money for readers themselves - £7.99 a month for access to a collection that includes less than half of the ebooks available on Amazon is not an attractive prospect for the infrequent reader. However, as someone who always used to blow through their pocket money on just a few books, it seemed a thrilling proposition! 
 
-Of course, it's debated whether Kindle Unlimited is even worth the money for readers themselves - at ? pounds a month, some view it as a steep price to pay for a collection that includes less than half of the books available on Kindle (and none of the big names) - but for me it had always seemed a no-brainer. With multiple books always on the go and usually reading a couple of books a week, it seemed destined to pay for itself! 
+But perhaps I was overhasty in my enthusiasm for the scheme. Initially 
 
-* Reputable editions of classics 
+some view it as a steep price to pay for a collection that includes less than half of the books available on Kindle (and none of the big names) - but for me it had always seemed a no-brainer. With multiple books always on the go and usually reading a couple of books a week, it seemed destined to pay for itself!
+
+* Reputable editions of classics
 
 Link to how Spotify works, how do the authors get paid/how much etc - does all the money go into a central pot or do individual authors get paid when their books are borrowed through Kindle Unlimited
 
 Lots of blog posts about Kindle Unlimited and whether it's worth it for readers, but what about writers?
 
-What's the Kindle Owners' Lending Library? What's Prime Reading? 
+What's the Kindle Owners' Lending Library? What's Prime Reading?
 
 FROM ANOTHER BLOG...
 
