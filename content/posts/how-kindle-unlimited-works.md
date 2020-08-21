@@ -38,6 +38,6 @@ Furthermore, despite the Kindle Edition Normalized Page, which supposedly accoun
 
 ###### So, what should I do in light of this information?
 
-Although many authors must support, or at least accept this system, it seems to devalue the immense effort that must go into writing a book, by preventing authors from gaining adequate monetary recognition for their work.
+Although many authors must support, or at least accept this system, it seems to devalue the immense effort that must go into writing a book, by preventing authors from gaining adequate monetary recognition for their work. 
 
 Low priced books – just buy them! (could double the profit made by the author?)
