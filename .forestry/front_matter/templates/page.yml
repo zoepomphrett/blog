@@ -12,7 +12,7 @@ fields:
   type: boolean
   label: Show Title
   default: true
-  description: Show title at the top of the post
+  description: Show title at the top of the post.
 - name: seo
   type: field_group
   config: {}
@@ -20,11 +20,11 @@ fields:
   - name: description
     type: textarea
     config:
-      required: false
+      required: true
       wysiwyg: false
       schema:
         format: markdown
-    label: Meta Description
+    label: Description
     description: Used by search engines to identify page.
   - name: thumbnail
     type: file
