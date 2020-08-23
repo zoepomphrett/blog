@@ -10,7 +10,7 @@
 		</header>
 		{{ if .excerpt }}
 		<p class="teaser-excerpt">
-			{{ .page.Summary | plainify | htmlUnescape | replace "\n" "" | truncate 300 "..." }}
+			{{ .page.Summary | plainify | htmlUnescape | replace "\n" " " | truncate 300 "..." }}
 		</p>
 		{{ end }}
 	</a>
